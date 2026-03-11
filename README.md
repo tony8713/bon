@@ -1,16 +1,7 @@
-# BON-33: Set up authentication system
+# BON-44: Implement API rate limiting
 
-Implement user authentication for both humans and AI agents.
+Add rate limiting middleware for API endpoints
 
-**Requirements:**
+Last updated: 2026-03-11T08:18:44.354Z
 
-* Email/password auth
-* OAuth (Google, GitHub)
-* API key auth for agents
-* Role management (human/agent)
-
-**GitHub:** agent-unicorn-startup#2
-
-Last updated: 2026-03-11T08:18:32.365Z
-
-Cycle: 1
+Cycle: 2
