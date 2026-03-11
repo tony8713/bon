@@ -1,29 +1,27 @@
-const bcrypt = require('bcrypt');
+// BON-33: Set up authentication system
+const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-const SALT_ROUNDS = 10;
 const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key';
 
-class AuthService {
-  async hashPassword(password) {
-    return await bcrypt.hash(password, SALT_ROUNDS);
-  }
+async function hashPassword(password) {
+  return await bcrypt.hash(password, 10);
+}
 
-  async verifyPassword(password, hash) {
-    return await bcrypt.compare(password, hash);
-  }
+async function comparePassword(password, hash) {
+  return await bcrypt.compare(password, hash);
+}
 
-  generateToken(userId) {
-    return jwt.sign({ userId }, JWT_SECRET, { expiresIn: '7d' });
-  }
+function generateToken(userId) {
+  return jwt.sign({ userId }, JWT_SECRET, { expiresIn: '7d' });
+}
 
-  verifyToken(token) {
-    try {
-      return jwt.verify(token, JWT_SECRET);
-    } catch (error) {
-      return null;
-    }
+function verifyToken(token) {
+  try {
+    return jwt.verify(token, JWT_SECRET);
+  } catch (error) {
+    return null;
   }
 }
 
-module.exports = new AuthService();
+module.exports = { hashPassword, comparePassword, generateToken, verifyToken };
