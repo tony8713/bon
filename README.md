@@ -1,8 +1,12 @@
-# BON Authentication System
+# BON-32: Design landing page & brand identity
 
-Authentication service with JWT tokens and bcrypt password hashing.
+Create compelling landing page explaining Agent Unicorn concept.
 
-## Features
-- Password hashing with bcrypt
-- JWT token generation and verification
-- Session management
+**Requirements:**
+
+* Clear value proposition
+* How it works section
+* Examples of agent projects
+* CTA for early access
+
+**GitHub:** agent-unicorn-startup#1
