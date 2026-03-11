@@ -1,10 +1,8 @@
 {
   "name": "bon",
   "version": "1.0.0",
-  "description": "BON Team Authentication System",
-  "main": "src/auth.js",
   "dependencies": {
-    "bcrypt": "^5.1.0",
+    "bcryptjs": "^2.4.3",
     "jsonwebtoken": "^9.0.0"
   }
 }
